@@ -2,7 +2,7 @@
 include 'koneksi.php';
 
 if (isset($_POST['simpan'])) {
-    $judul = $_POST['judul'];
+    $judul = mysqli_real_escape_string($conn, $_POST['judul']);
     $penulis = $_POST['penulis'];
     $isi = $_POST['isi'];
     $tanggal = date('Y-m-d'); // Mengambil tanggal hari ini secara otomatis
@@ -44,4 +44,5 @@ if (isset($_POST['simpan'])) {
         </form>
     </div>
 </body>
+
 </html>
